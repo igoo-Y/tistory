@@ -1,0 +1,10 @@
+<p>
+  <div id="comment_<%=comment.id %>">
+    <%= comment.content %> -- <%= comment.created_at.to_s(:long) %>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_board_comment_path(id: comment.id, board_id: comment.board.id, user_id: comment.user.id), remote: true %>
+      <%= link_to 'Destroy', board_comment_path(id: comment.id, board_id: comment.board.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+</p>
