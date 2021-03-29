@@ -1,4 +1,4 @@
-# README
+# README 티스토리에 올라갈 프로젝트!!!
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
