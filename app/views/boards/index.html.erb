@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Boards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Name</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boards.each do |board| %>
+      <tr>
+        <td><%= board.title %></td>
+        <td><%= board.content %></td>
+        <td><%= board.user.name rescue "이름없음" %></td>
+        <td><%= link_to 'Show', board %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%if user_signed_in? %>
+  <%= link_to 'New Board', new_board_path %>
+<%else %>
+  <%= link_to 'New Board', new_user_session_path%>
+<%end %>

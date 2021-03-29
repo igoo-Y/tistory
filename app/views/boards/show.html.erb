@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @board.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @board.content %>
+</p>
+
+<p>
+  <%= image_tag(@board.avatar.url) %>
+</p>
+
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_board_path(@board) %> |
+  <%= link_to 'Destroy', board_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
+
+<%= link_to 'Back', boards_path %>
+
+<P>
+  <h3>Comments</h3>
+    <div id="comments">
+      <%= render @board.comments %>
+    </div>
+
+    <%if user_signed_in?%>
+      <div>
+        <%= render 'comments/new', board: @board, comment: Comment.new %>
+      </div>
+    <% end %>
+</p>
+

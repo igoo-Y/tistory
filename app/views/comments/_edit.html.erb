@@ -1,0 +1,5 @@
+<%=form_for([@board, @comment], remote: true) do |form| %>
+  Edit Comment: <br>
+  <%= form.text_area :content %>
+  <%= form.submit %>
+<% end %>

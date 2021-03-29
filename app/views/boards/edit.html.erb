@@ -1,0 +1,13 @@
+<%if @board.user_id == current_user.id %>
+  <h1>Editing Board</h1>
+
+  <%= render 'form', board: @board %>
+
+  <%= link_to 'Show', @board %> |
+  <%= link_to 'Back', boards_path %>
+
+<%else %>
+  <P>게시물 수정 권한이 없습니다.</P>
+  <%= link_to 'back', boards_path %>
+
+<% end %>
