@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_074712) do
+ActiveRecord::Schema.define(version: 2021_04_29_064941) do
 
   create_table "boards", force: :cascade do |t|
     t.string "title"
@@ -28,6 +28,22 @@ ActiveRecord::Schema.define(version: 2021_03_19_074712) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.index ["board_id"], name: "index_comments_on_board_id"
+  end
+
+  create_table "desserts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "status", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "enums", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|

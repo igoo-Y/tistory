@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Enums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enums.each do |enum| %>
+      <tr>
+        <td><%= enum.title %></td>
+        <td><%= enum.content %></td>
+        <td><%= enum.status %></td>
+        <td><%= link_to 'Show', enum %></td>
+        <td><%= link_to 'Edit', edit_enum_path(enum) %></td>
+        <td><%= link_to 'Destroy', enum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Enum', new_enum_path %>

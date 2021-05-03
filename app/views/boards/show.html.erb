@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  <%= image_tag(@board.avatar.url) %>
+  <%= image_tag(@board.avatar.url) rescue '' %>
 </p>
 
 <% if user_signed_in? %>

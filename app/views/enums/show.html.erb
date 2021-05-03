@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @enum.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @enum.content %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @enum.status %>
+</p>
+
+<%= link_to 'Edit', edit_enum_path(@enum) %> |
+<%= link_to 'Back', enums_path %>

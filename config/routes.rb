@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :desserts
+  resources :enums
   devise_for :users
 
   root "boards#index"
